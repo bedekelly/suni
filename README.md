@@ -8,14 +8,12 @@ heredoc> two
 heredoc> three
 heredoc> two
 heredoc> one
-heredoc> two
 heredoc> EOF
 {"one":1}
 {"one":1,"two":1}
 {"one":1,"three":1,"two":1}
 {"one":1,"three":1,"two":2}
 {"one":2,"three":1,"two":2}
-{"one":2,"three":1,"two":3}
 ```
 
 ## Building & Running
