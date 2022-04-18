@@ -1,3 +1,3 @@
-module github.com/bedekelly/uniqStreaming
+module github.com/bedekelly/suni
 
 go 1.18

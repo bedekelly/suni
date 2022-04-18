@@ -11,6 +11,7 @@ func main() {
 	occurrences := make(map[string]int)
 
 	scanner := bufio.NewScanner(os.Stdin)
+
 	for scanner.Scan() {
 		line := scanner.Text()
 		if line == "" {
@@ -25,6 +26,14 @@ func main() {
 		}
 
 		output := string(outputBytes)
-		fmt.Print(output)
+
+		fmt.Println(output)
 	}
+
+	err := scanner.Err()
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
 }
