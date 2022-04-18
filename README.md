@@ -38,12 +38,12 @@ I'm using this in a pipeline for generating a _very_ simple analytics file, of t
 
 Here's a rough approximation of the sort of script I'm running.
 
-```
+```bash
 tail -f -n +1 $LOGFILE \
 | jq -r --unbuffered '
   .request.host+.request.uri
-  | select(. | test(<snip: pattern for various boring stuff like images/txt files>) == false)
+  | select(. | test(/* pattern for various boring stuff like images/txt files */) == false)
   | rtrimstr("/")' \
 | ./suni
-| <snip: write each new line to analytics file on disk>
+| # write each new line to analytics file on disk
 ```
