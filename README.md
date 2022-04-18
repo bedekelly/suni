@@ -42,7 +42,9 @@ Here's a rough approximation of the sort of script I'm running.
 tail -f -n +1 $LOGFILE \
 | jq -r --unbuffered '
   .request.host+.request.uri
-  | select(. | test(/* pattern for various boring stuff like images/txt files */) == false)
+  | select(. | test(
+      # pattern for various boring stuff like images/txt files
+    ) == false)
   | rtrimstr("/")' \
 | ./suni
 | # write each new line to analytics file on disk
