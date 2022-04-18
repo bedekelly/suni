@@ -22,6 +22,8 @@ $ make        # For a native build
 $ make sunix  # For a cross-platform build to AMD64.
 ```
 
+## Alternatives
+Before building this tool I tried hacking something together with AWK. The trouble is, I really did want JSON output, so AWK is a bit awkward, especially because JSON (and specifically [jq](https://stedolan.github.io/jq/)) doesn't allow for trailing commas. I had to add a `sed` command after the `awk`, and I wasn't nearly as confident that things like quotes were being handled correctly.
 
 ## Usage Ideas
 I'm using this in a pipeline for generating a _very_ simple analytics file, of this form:
